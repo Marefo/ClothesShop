@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9e1501688046c08636c5ff285d8abe, type: 3}
+  m_Name: MaleHairData
+  m_EditorClassIdentifier: 
+  AnimationClips:
+  - StateType: 0
+    MoveDirectionType: 0
+    Clip: {fileID: 7400000, guid: a8d597a397957b9479d56bbc870a69c1, type: 2}
+  - StateType: 0
+    MoveDirectionType: 1
+    Clip: {fileID: 7400000, guid: bb4646de8686779458d88d8825990db5, type: 2}
+  - StateType: 0
+    MoveDirectionType: 3
+    Clip: {fileID: 7400000, guid: ad157a1bcbb4783418b91a9904e72e4c, type: 2}
+  - StateType: 0
+    MoveDirectionType: 2
+    Clip: {fileID: 7400000, guid: 2933a554b9765ec42ae8ce45c2ebf1d9, type: 2}
+  - StateType: 1
+    MoveDirectionType: 0
+    Clip: {fileID: 7400000, guid: b31d3fad2658e3c46b2cdc01081c4d33, type: 2}
+  - StateType: 1
+    MoveDirectionType: 1
+    Clip: {fileID: 7400000, guid: 4603fb1f735eaa043ba4ac7274d988a1, type: 2}
+  - StateType: 1
+    MoveDirectionType: 3
+    Clip: {fileID: 7400000, guid: d243122430e4c964e864ac7e42e14491, type: 2}
+  - StateType: 1
+    MoveDirectionType: 2
+    Clip: {fileID: 7400000, guid: 00ea88e27558b3c45b17e0ad06d091aa, type: 2}

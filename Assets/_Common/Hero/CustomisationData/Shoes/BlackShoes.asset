@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9e1501688046c08636c5ff285d8abe, type: 3}
+  m_Name: BlackShoes
+  m_EditorClassIdentifier: 
+  Empty: 0
+  AnimationClips:
+  - StateType: 0
+    MoveDirectionType: 0
+    Clip: {fileID: 7400000, guid: ace69d78d5e9e2342a2c55eccfdeac90, type: 2}
+  - StateType: 0
+    MoveDirectionType: 1
+    Clip: {fileID: 7400000, guid: 334fc4e671500be4dbbe1da660703d32, type: 2}
+  - StateType: 0
+    MoveDirectionType: 3
+    Clip: {fileID: 7400000, guid: 3cf4e6dbc77a0694292a807a1cf6f1b8, type: 2}
+  - StateType: 0
+    MoveDirectionType: 2
+    Clip: {fileID: 7400000, guid: 0061529e6c31f4843b611a58fa1612a3, type: 2}
+  - StateType: 1
+    MoveDirectionType: 0
+    Clip: {fileID: 7400000, guid: c1af05e95c6f98a498602b7223e294a2, type: 2}
+  - StateType: 1
+    MoveDirectionType: 1
+    Clip: {fileID: 7400000, guid: 379a8b939a4f989478a8194354b8458f, type: 2}
+  - StateType: 1
+    MoveDirectionType: 3
+    Clip: {fileID: 7400000, guid: b77623e277b913c46821247392c325ad, type: 2}
+  - StateType: 1
+    MoveDirectionType: 2
+    Clip: {fileID: 7400000, guid: 8f070114504ed344396c628146456f51, type: 2}

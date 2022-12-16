@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9e1501688046c08636c5ff285d8abe, type: 3}
+  m_Name: YellowShoes
+  m_EditorClassIdentifier: 
+  Empty: 0
+  AnimationClips:
+  - StateType: 0
+    MoveDirectionType: 0
+    Clip: {fileID: 7400000, guid: 22460fb8eb8e0c24eb9b4e7452e6e8d1, type: 2}
+  - StateType: 0
+    MoveDirectionType: 1
+    Clip: {fileID: 7400000, guid: 04ba11036a1a76041a70cda04b3fd9fb, type: 2}
+  - StateType: 0
+    MoveDirectionType: 3
+    Clip: {fileID: 7400000, guid: 79b9061729732ed4198832a04f580f94, type: 2}
+  - StateType: 0
+    MoveDirectionType: 2
+    Clip: {fileID: 7400000, guid: a91575fa5fe18824c8681c864dddf6a6, type: 2}
+  - StateType: 1
+    MoveDirectionType: 0
+    Clip: {fileID: 7400000, guid: 276b893104d17a04c80583f5940d309b, type: 2}
+  - StateType: 1
+    MoveDirectionType: 1
+    Clip: {fileID: 7400000, guid: f42278f9703096d42938f94c3e36aaf9, type: 2}
+  - StateType: 1
+    MoveDirectionType: 3
+    Clip: {fileID: 7400000, guid: 5dc43b3ed0c322f4a8fa939470cf8266, type: 2}
+  - StateType: 1
+    MoveDirectionType: 2
+    Clip: {fileID: 7400000, guid: 8c43600f38786ad47a020157003e2489, type: 2}

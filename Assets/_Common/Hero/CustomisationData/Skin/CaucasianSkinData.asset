@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9e1501688046c08636c5ff285d8abe, type: 3}
+  m_Name: CaucasianSkinData
+  m_EditorClassIdentifier: 
+  Index: 0
+  AnimationClips:
+  - StateType: 0
+    MoveDirectionType: 0
+    Clip: {fileID: 7400000, guid: 8bdd37362bcaca844b738c810bf11807, type: 2}
+  - StateType: 0
+    MoveDirectionType: 1
+    Clip: {fileID: 7400000, guid: a7969efad3183864cabf692435aa85d7, type: 2}
+  - StateType: 0
+    MoveDirectionType: 3
+    Clip: {fileID: 7400000, guid: 601e4ca7ecefefa468beaadf76affedd, type: 2}
+  - StateType: 0
+    MoveDirectionType: 2
+    Clip: {fileID: 7400000, guid: 4fff7112377cebd44b79655abbdda7bd, type: 2}
+  - StateType: 1
+    MoveDirectionType: 0
+    Clip: {fileID: 7400000, guid: 1981b1d69fbc4a64d9c3a736be674f4b, type: 2}
+  - StateType: 1
+    MoveDirectionType: 1
+    Clip: {fileID: 7400000, guid: cc8ca1448ac4dc742ad81489de6b2e8a, type: 2}
+  - StateType: 1
+    MoveDirectionType: 3
+    Clip: {fileID: 7400000, guid: 4324624c4f274b04594b1dfe001c964c, type: 2}
+  - StateType: 1
+    MoveDirectionType: 2
+    Clip: {fileID: 7400000, guid: e0c47a2c007289b46930b4a6f406b3ae, type: 2}

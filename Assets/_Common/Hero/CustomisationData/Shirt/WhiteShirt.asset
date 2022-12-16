@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9e1501688046c08636c5ff285d8abe, type: 3}
+  m_Name: WhiteShirt
+  m_EditorClassIdentifier: 
+  Empty: 0
+  AnimationClips:
+  - StateType: 0
+    MoveDirectionType: 0
+    Clip: {fileID: 7400000, guid: d57a61ecf4bb4ec4eac33918b2539440, type: 2}
+  - StateType: 0
+    MoveDirectionType: 1
+    Clip: {fileID: 7400000, guid: 6d459a3c81de20a4bbebaac0f98301db, type: 2}
+  - StateType: 0
+    MoveDirectionType: 3
+    Clip: {fileID: 7400000, guid: 2f61c5f46144daf41b53cab9a2632d0d, type: 2}
+  - StateType: 0
+    MoveDirectionType: 2
+    Clip: {fileID: 7400000, guid: a9d51cb67040d5d4db532689f320c859, type: 2}
+  - StateType: 1
+    MoveDirectionType: 0
+    Clip: {fileID: 7400000, guid: 2cefb0b9bcdda5645a5e7fe3ab1caa3a, type: 2}
+  - StateType: 1
+    MoveDirectionType: 1
+    Clip: {fileID: 7400000, guid: 975c9dfcf011f3748bf71067e70d92f0, type: 2}
+  - StateType: 1
+    MoveDirectionType: 3
+    Clip: {fileID: 7400000, guid: 7a836f36ae5603a4880be778422b9569, type: 2}
+  - StateType: 1
+    MoveDirectionType: 2
+    Clip: {fileID: 7400000, guid: dc0c8d4416e31124fbd677a64af05a03, type: 2}
