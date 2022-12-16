@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ab7bd76cc46445408a647ce8524b4a0
+guid: 5561cb241607dd14a8ca555e7512f62f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Toriko
+  - MatchupPro
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

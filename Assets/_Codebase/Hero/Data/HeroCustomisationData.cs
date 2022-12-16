@@ -17,12 +17,15 @@ namespace _Codebase.Hero.Data
     public CustomisationSinglePartTypeData GetCurrentPartData(CustomisationPartType partType) =>
       CurrentPartsData.First(partData => partData.Type == partType);
 
-    public void ChangePartDataToNext(CustomisationPartType partType)
+    public void ChangePartDataToNext(CustomisationPartType partType) => ChangePartDataTo(true, partType);
+    public void ChangePartDataToPrevious(CustomisationPartType partType) => ChangePartDataTo(false, partType);
+
+    private void ChangePartDataTo(bool next, CustomisationPartType partType)
     {
       var currentPartTypeData = GetCurrentPartData(partType);
       int globalPartIndex = GetPartsByType(partType).IndexOf(currentPartTypeData.CustomisationPartData);
-      var nextPart = GetNextPartData(partType, globalPartIndex);
-      ChangeCurrentPartData(partType, nextPart);
+      CustomisationPartData newPart = next ? GetNextPartData(partType, globalPartIndex) : GetPreviousPartData(partType, globalPartIndex);
+      ChangeCurrentPartData(partType, newPart);
     }
 
     private void ChangeCurrentPartData(CustomisationPartType partType, CustomisationPartData newPart)
@@ -32,7 +35,14 @@ namespace _Codebase.Hero.Data
       PartChanged?.Invoke(partType, currentPartTypeData.CustomisationPartData, newPart);
       CurrentPartsData[indexInCurrentParts].CustomisationPartData = newPart;
     }
-
+    
+    private CustomisationPartData GetPreviousPartData(CustomisationPartType partType, int currentPartIndex)
+    {
+      List<CustomisationPartData> parts = GetPartsByType(partType);
+      int previousPartIndex = currentPartIndex - 1;
+      return previousPartIndex > 0 ? parts[previousPartIndex] : parts[parts.Count];
+    }
+    
     private CustomisationPartData GetNextPartData(CustomisationPartType partType, int currentPartIndex)
     {
       List<CustomisationPartData> parts = GetPartsByType(partType);

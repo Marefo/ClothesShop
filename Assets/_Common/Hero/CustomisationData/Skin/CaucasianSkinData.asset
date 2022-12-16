@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9e1501688046c08636c5ff285d8abe, type: 3}
   m_Name: CaucasianSkinData
   m_EditorClassIdentifier: 
-  Index: 0
+  Empty: 0
+  Name: White
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

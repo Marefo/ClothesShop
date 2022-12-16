@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: EmptyCustomisationPart
   m_EditorClassIdentifier: 
   Empty: 1
+  Name: None
   AnimationClips: []

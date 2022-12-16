@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9e1501688046c08636c5ff285d8abe, type: 3}
   m_Name: FemaleHairData
   m_EditorClassIdentifier: 
+  Empty: 0
+  Name: Female
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

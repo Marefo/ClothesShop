@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9e1501688046c08636c5ff285d8abe, type: 3}
   m_Name: BlackSkinData
   m_EditorClassIdentifier: 
-  Index: 1
+  Empty: 0
+  Name: Black
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0
