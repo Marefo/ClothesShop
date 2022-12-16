@@ -7,7 +7,7 @@ namespace _Codebase.UI
   public class CustomisationCompleteButton : MonoBehaviour
   {
     [SerializeField] private Button _button;
-    [SerializeField] private GameObject _panel;
+    [SerializeField] private Panel _panel;
     [SerializeField] private CamerasStateController _camerasStateController;
 
     private void OnEnable() => _button.onClick.AddListener(OnButtonClick);
@@ -16,7 +16,7 @@ namespace _Codebase.UI
     private void OnButtonClick()
     {
       _camerasStateController.ZoomOut();
-      _panel.SetActive(false);
+      _panel.Hide();
     }
   }
 }
