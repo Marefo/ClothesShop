@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WhiteShirt
   m_EditorClassIdentifier: 
   Empty: 0
+  Name: White
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

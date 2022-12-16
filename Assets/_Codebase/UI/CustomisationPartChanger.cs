@@ -1,5 +1,5 @@
 ﻿using System;
-using _Codebase.Hero.Data;
+using _Codebase.HeroCode.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

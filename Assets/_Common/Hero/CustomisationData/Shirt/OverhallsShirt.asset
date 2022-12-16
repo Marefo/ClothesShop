@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: OverhallsShirt
   m_EditorClassIdentifier: 
   Empty: 0
+  Name: Overalls
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: YellowShoes
   m_EditorClassIdentifier: 
   Empty: 0
+  Name: Yellow
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0
