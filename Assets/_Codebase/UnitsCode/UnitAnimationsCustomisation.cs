@@ -1,18 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using _Codebase.Customisation;
 using _Codebase.HeroCode.Data;
 using _Codebase.Infrastructure;
 using UnityEngine;
 
-namespace _Codebase.HeroCode
+namespace _Codebase.UnitsCode
 {
-  public class HeroAnimationsCustomisation : MonoBehaviour
+  public class UnitAnimationsCustomisation : MonoBehaviour
   {
+    [SerializeField] private bool _setRandomPartsOnStart;
+    [Space(10)]
     [SerializeField] private List<CustomisationPartGameObject> _customisationPartObjects;
     [Space(10)]
     [SerializeField] private Animator _animator;
     [Space(10)]
-    [SerializeField] private HeroCustomisationData _customisationData;
+    [SerializeField] private CustomisationData _customisationData;
     
     private AnimatorOverrideController _animatorOverrideController;
     private List<KeyValuePair<AnimationClip,AnimationClip>> _currentClips;
@@ -20,19 +24,23 @@ namespace _Codebase.HeroCode
     private void Awake()
     {
       InitializeAnimatorOverrideController();
-      UpdateCurrentCustomisationParts();
+      
+      if(_setRandomPartsOnStart)
+        SetRandomCustomisationParts();
+      else
+        UpdateCustomisationPartsByCurrentData();
     }
 
     private void OnEnable()
     {
       _customisationData.PartChanged += OnPartChange;
-      _customisationData.CurrentPartsChanged += UpdateCurrentCustomisationParts;
+      _customisationData.CurrentPartsChanged += UpdateCustomisationPartsByCurrentData;
     }
 
     private void OnDisable()
     {
       _customisationData.PartChanged -= OnPartChange;
-      _customisationData.CurrentPartsChanged -= UpdateCurrentCustomisationParts;
+      _customisationData.CurrentPartsChanged -= UpdateCustomisationPartsByCurrentData;
     }
 
     private void OnPartChange(CustomisationPartType partType, CustomisationPartData currentPartData, CustomisationPartData nextPartData)
@@ -60,28 +68,30 @@ namespace _Codebase.HeroCode
       _animatorOverrideController.ApplyOverrides(_currentClips);
     }
 
-    private void UpdateCurrentCustomisationParts()
+    private void SetRandomCustomisationParts() => UpdateCustomisationParts(_customisationData.GetRandomPartData);
+    private void UpdateCustomisationPartsByCurrentData() => UpdateCustomisationParts(_customisationData.GetCurrentPartData);
+
+    private void UpdateCustomisationParts(Func<CustomisationPartType, CustomisationPartData> getPartData)
     {
       var partTypes = Helpers.EnumToList<CustomisationPartType>();
       foreach (CustomisationPartType partType in partTypes)
       {
-        var targetPartData = _customisationData.GetCurrentPartData(partType);
+        var targetPartData = getPartData(partType);
 
-        if (targetPartData.CustomisationPartData.Empty)
+        if (targetPartData.Empty)
         {
           ChangePartState(partType, false);
           continue;
         }
         
-        var stateTypes = Helpers.EnumToList<HeroStateType>();
-        foreach (HeroStateType stateType in stateTypes)
+        var stateTypes = Helpers.EnumToList<UnitStateType>();
+        foreach (UnitStateType stateType in stateTypes)
         {
           var directionTypes = Helpers.EnumToList<MoveDirectionType>();
           foreach (MoveDirectionType directionType in directionTypes)
           {
             string currentClipName = GetAnimationClipKey(partType, stateType, directionType);
-            AnimationClip targetClip = targetPartData.CustomisationPartData.GetClip(stateType, directionType);
-              
+            AnimationClip targetClip = targetPartData.GetClip(stateType, directionType);
             ReplaceClip(currentClipName, targetClip);
           }  
         }
@@ -114,7 +124,7 @@ namespace _Codebase.HeroCode
       _animatorOverrideController.ApplyOverrides(_currentClips);
     }
 
-    private string GetAnimationClipKey(CustomisationPartType partType, HeroStateType stateType,
+    private string GetAnimationClipKey(CustomisationPartType partType, UnitStateType stateType,
       MoveDirectionType directionType)
     {
       string partTypeName = GetCustomisationPartName(partType);
@@ -137,12 +147,12 @@ namespace _Codebase.HeroCode
       };
     }
     
-    private string GetStateName(HeroStateType type)
+    private string GetStateName(UnitStateType type)
     {
       return type switch
       {
-        HeroStateType.Idle => "idle",
-        HeroStateType.Walk => "walk",
+        UnitStateType.Idle => "idle",
+        UnitStateType.Walk => "walk",
         _ => ""
       };
     }

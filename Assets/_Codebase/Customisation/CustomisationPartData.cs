@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using _Codebase.HeroCode.Data;
+using _Codebase.UnitsCode;
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace _Codebase.HeroCode.Data
+namespace _Codebase.Customisation
 {
   [CreateAssetMenu(fileName = "CustomisationPartData", menuName = "StaticData/CustomisationPart")]
   public class CustomisationPartData : ScriptableObject
@@ -15,10 +17,10 @@ namespace _Codebase.HeroCode.Data
     [HideIf(nameof(Empty))] public int Cost;
     [HideIf(nameof(Empty))] public List<CustomisationAnimationClipData> AnimationClips;
 
-    public AnimationClip GetClip(HeroStateType heroStateType, MoveDirectionType moveDirectionType)
+    public AnimationClip GetClip(UnitStateType unitStateType, MoveDirectionType moveDirectionType)
     {
       return AnimationClips
-        .First(clip => clip.StateType == heroStateType && clip.MoveDirectionType == moveDirectionType).Clip;
+        .First(clip => clip.StateType == unitStateType && clip.MoveDirectionType == moveDirectionType).Clip;
     }
   }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace _Codebase.HeroCode.Data
+namespace _Codebase.Customisation
 {
   [Serializable]
   public class CustomisationPartGameObject

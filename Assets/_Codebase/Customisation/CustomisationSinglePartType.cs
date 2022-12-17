@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _Codebase.HeroCode.Data
+namespace _Codebase.Customisation
 {
   [Serializable]
   public class CustomisationSinglePartType

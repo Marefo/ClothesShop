@@ -1,4 +1,5 @@
 ﻿using System;
+using _Codebase.Customisation;
 using _Codebase.HeroCode.Data;
 using TMPro;
 using UnityEngine;
@@ -15,9 +16,7 @@ namespace _Codebase.UI
     [SerializeField] private Button _prevPartButton;
     [SerializeField] private Button _nextPartButton;
     [Space(10)] 
-    [SerializeField] private HeroCustomisationData _customisationData;
-
-    private void Awake() => InitializeCurrentPartName();
+    [SerializeField] private CustomisationData _customisationData;
 
     private void OnEnable()
     {
@@ -32,6 +31,8 @@ namespace _Codebase.UI
       _nextPartButton.onClick.RemoveListener(OnNextPartButtonClick);
       _customisationData.PartChanged -= OnPartChange;
     }
+
+    private void Start() => InitializeCurrentPartName();
 
     private void OnPartChange(CustomisationPartType partType, CustomisationPartData previousPartData, 
       CustomisationPartData newPartData)
@@ -58,7 +59,7 @@ namespace _Codebase.UI
 
     private void InitializeCurrentPartName()
     {
-      var currentName = _customisationData.GetCurrentPartData(_partType).CustomisationPartData.Name;
+      var currentName = _customisationData.GetCurrentPartDataAsSingleType(_partType).CustomisationPartData.Name;
       SetCurrentPartName(currentName);
     }
 

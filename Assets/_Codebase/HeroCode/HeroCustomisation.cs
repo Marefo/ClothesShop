@@ -1,4 +1,5 @@
 ﻿using _Codebase.Camera;
+using _Codebase.Customisation;
 using _Codebase.HeroCode.Data;
 using _Codebase.Logic;
 using _Codebase.UI;
@@ -13,7 +14,7 @@ namespace _Codebase.HeroCode
     [SerializeField] private Showable _characterClotheFittingPanel;
     [SerializeField] private CamerasStateController _camerasStateController;
     [Space(10)]
-    [SerializeField] private HeroCustomisationData _customisationData;
+    [SerializeField] private CustomisationData _customisationData;
 
     public void StartFittingClothes()
     {

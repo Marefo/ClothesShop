@@ -1,4 +1,5 @@
 ﻿using System;
+using _Codebase.Customisation;
 using _Codebase.HeroCode.Data;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace _Codebase.UI.Shop
     [SerializeField] private Transform _itemsContainer;
     [SerializeField] private ShopItem _shopItemPrefab;
     [Space(10)]
-    [SerializeField] private HeroCustomisationData _customisationData;
+    [SerializeField] private CustomisationData _customisationData;
 
     private void Start() => GenerateShopItems();
 

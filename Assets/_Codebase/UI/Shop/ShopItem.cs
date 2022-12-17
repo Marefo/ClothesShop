@@ -1,4 +1,5 @@
 ﻿using System;
+using _Codebase.Customisation;
 using _Codebase.HeroCode.Data;
 using _CodeBase.Logging;
 using _Codebase.Money;
@@ -19,7 +20,7 @@ namespace _Codebase.UI.Shop
     [SerializeField] private Button _buyButton;
     [SerializeField] private Image _buyButtonImage;
     [Space(10)] 
-    [SerializeField] private HeroCustomisationData _customisationData;
+    [SerializeField] private CustomisationData _customisationData;
     [SerializeField] private MoneyData _moneyData;
 
     private string _itemName => $"{_type} {_data.Name}";

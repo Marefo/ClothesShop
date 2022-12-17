@@ -1,4 +1,4 @@
-﻿namespace _Codebase.HeroCode.Data
+﻿namespace _Codebase.Customisation
 {
   public enum CustomisationPartType
   {

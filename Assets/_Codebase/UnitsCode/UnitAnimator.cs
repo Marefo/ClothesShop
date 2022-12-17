@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Codebase.Logic
+namespace _Codebase.UnitsCode
 {
   public class UnitAnimator : MonoBehaviour
   {

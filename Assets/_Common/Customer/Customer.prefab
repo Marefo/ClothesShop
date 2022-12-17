@@ -294,6 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5808842388489495314}
   - component: {fileID: 5808842388489495311}
+  - component: {fileID: 4437254429861520020}
   - component: {fileID: 5808842388489495308}
   - component: {fileID: 5808842388489495310}
   - component: {fileID: 5808842388489495312}
@@ -338,6 +339,32 @@ MonoBehaviour:
   _rigidbody: {fileID: 5808842388489495312}
   _animator: {fileID: 5808842388489495308}
   _settings: {fileID: 11400000, guid: 22224e2dbbdb73f40b03c3f4a14e85de, type: 2}
+--- !u!114 &4437254429861520020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5808842388489495317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51fd78d8c1b4771b5a94242edcc8052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _setRandomPartsOnStart: 1
+  _customisationPartObjects:
+  - Type: 0
+    GameObject: {fileID: 5808842387653621492}
+  - Type: 1
+    GameObject: {fileID: 5808842387848172443}
+  - Type: 2
+    GameObject: {fileID: 5808842389129800839}
+  - Type: 3
+    GameObject: {fileID: 5808842389309233789}
+  - Type: 4
+    GameObject: {fileID: 5808842387655430485}
+  _animator: {fileID: 5808842389548275492}
+  _customisationData: {fileID: 11400000, guid: 1abb4877c41258a448eda74ecfa63387, type: 2}
 --- !u!114 &5808842388489495308
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using _Codebase.Extensions;
 using _Codebase.Infrastructure;
-using _CodeBase.Logging;
 using NaughtyAttributes;
 using UnityEngine;
 
-namespace _Codebase.HeroCode.Data
+namespace _Codebase.Customisation
 {
-  [CreateAssetMenu(fileName = "HeroCustomisationData", menuName = "StaticData/HeroCustomisation")]
-  public class HeroCustomisationData : ScriptableObject
+  [CreateAssetMenu(fileName = "CustomisationData", menuName = "StaticData/Customisation")]
+  public class CustomisationData : ScriptableObject
   {
     public event Action<CustomisationPartType, CustomisationPartData, CustomisationPartData> PartChanged;
     public event Action CurrentPartsChanged;
@@ -28,10 +27,16 @@ namespace _Codebase.HeroCode.Data
     public CustomisationPartData EmptyPart;
 
     private List<CustomisationSinglePartType> BeforeFittingPartsData;
-    
-    public CustomisationSinglePartType GetCurrentPartData(CustomisationPartType partType) =>
+
+    public CustomisationPartData GetRandomPartData(CustomisationPartType partType) =>
+      GetPartsByType(partType, AllPartsTypesData).GetRandomValue();
+
+    public CustomisationSinglePartType GetCurrentPartDataAsSingleType(CustomisationPartType partType) =>
       CurrentPartsData.First(partData => partData.Type == partType);
     
+    public CustomisationPartData GetCurrentPartData(CustomisationPartType partType) =>
+      CurrentPartsData.First(partData => partData.Type == partType).CustomisationPartData;
+
     [Button]
     public void SetToDefault()
     {
@@ -67,7 +72,7 @@ namespace _Codebase.HeroCode.Data
     }
 
     public bool IsProduct(CustomisationPartType type) => ProductTypes.Contains(type);
-    
+
     public void Buy(CustomisationPartType type, CustomisationPartData part)
     {
       var unBoughtPartsWithSameType = GetPartsByType(type, UnBoughtPartsTypesData);
@@ -77,7 +82,7 @@ namespace _Codebase.HeroCode.Data
     }
 
     public void OnFittingStart() => BeforeFittingPartsData = CopySinglePartsType(CurrentPartsData);
-    
+
     public void OnFittingFinish()
     {
       CurrentPartsData = CopySinglePartsType(BeforeFittingPartsData);
@@ -85,17 +90,18 @@ namespace _Codebase.HeroCode.Data
     }
 
     public void ChangePartDataToNextFromAll(CustomisationPartType partType) => ChangeCurrentPartTo(true, partType, false);
+
     public void ChangePartDataToPreviousFromAll(CustomisationPartType partType) => ChangeCurrentPartTo(false, partType, false);
 
     public void ChangePartDataToNextFromBought(CustomisationPartType partType) => 
       ChangeCurrentPartTo(true, partType, true);
-    
+
     public void ChangePartDataToPreviousFromBought(CustomisationPartType partType) => 
       ChangeCurrentPartTo(false, partType, true);
-    
+
     private void ChangeCurrentPartTo(bool next, CustomisationPartType partType, bool fromBought)
     {
-      var currentPartTypeData = GetCurrentPartData(partType);
+      var currentPartTypeData = GetCurrentPartDataAsSingleType(partType);
       int partIndexInCatalog = GetPartsByType(partType, fromBought ? BoughtPartsTypesData : AllPartsTypesData)
         .IndexOf(currentPartTypeData.CustomisationPartData);
       
@@ -107,19 +113,19 @@ namespace _Codebase.HeroCode.Data
 
     private void ChangeCurrentPart(CustomisationPartType partType, CustomisationPartData newPart)
     {
-      var currentPartTypeData = GetCurrentPartData(partType);
+      var currentPartTypeData = GetCurrentPartDataAsSingleType(partType);
       int indexInCurrentParts = CurrentPartsData.IndexOf(currentPartTypeData);
       PartChanged?.Invoke(partType, currentPartTypeData.CustomisationPartData, newPart);
       CurrentPartsData[indexInCurrentParts].CustomisationPartData = newPart;
     }
-    
+
     private CustomisationPartData GetPreviousPartData(CustomisationPartType partType, int currentPartIndex, bool fromBought)
     {
       List<CustomisationPartData> parts = GetPartsByType(partType, fromBought ? BoughtPartsTypesData : AllPartsTypesData);
       int previousPartIndex = currentPartIndex - 1;
       return previousPartIndex > 0 ? parts[previousPartIndex] : parts.Last();
     }
-    
+
     private CustomisationPartData GetNextPartData(CustomisationPartType partType, int currentPartIndex, bool fromBought)
     {
       List<CustomisationPartData> parts = GetPartsByType(partType, fromBought ? BoughtPartsTypesData : AllPartsTypesData);
@@ -132,7 +138,7 @@ namespace _Codebase.HeroCode.Data
     {
       return from.First(partTypeData => partTypeData.CustomisationPartType == type).CustomisationPartsData;
     }
-    
+
     private List<CustomisationSinglePartType> CopySinglePartsType(List<CustomisationSinglePartType> singlePartsType)
     {
       var copy = new List<CustomisationSinglePartType>();
