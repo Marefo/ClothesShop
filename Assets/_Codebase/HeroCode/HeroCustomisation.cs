@@ -9,7 +9,8 @@ namespace _Codebase.HeroCode
 {
   public class HeroCustomisation : MonoBehaviour
   {
-    [SerializeField] private Showable _characterCustomisationPanel;
+    [SerializeField] private Showable _characterClotheChangingPanel;
+    [SerializeField] private Showable _characterClotheFittingPanel;
     [SerializeField] private CamerasStateController _camerasStateController;
     [Space(10)]
     [SerializeField] private HeroCustomisationData _customisationData;
@@ -18,29 +19,41 @@ namespace _Codebase.HeroCode
     {
       _customisationData.OnFittingStart();
       _camerasStateController.ZoomIn();
-      _characterCustomisationPanel.Show();
+      _characterClotheFittingPanel.Show();
     }
 
     public void FinishFittingClothes()
     {
       _camerasStateController.ZoomOut();
-      _characterCustomisationPanel.Hide();
+      _characterClotheFittingPanel.Hide();
       _customisationData.OnFittingFinish();
+    }
+
+    public void StartChangingClothes()
+    {
+      _camerasStateController.ZoomIn();
+      _characterClotheChangingPanel.Show();
+    }
+
+    public void FinishChangingClothes()
+    {
+      _camerasStateController.ZoomOut();
+      _characterClotheChangingPanel.Hide();
     }
     
     [Button()]
-    public void TestNextSkin() => _customisationData.ChangePartDataToNext(CustomisationPartType.Body);
+    public void TestNextSkin() => _customisationData.ChangePartDataToNextFromAll(CustomisationPartType.Body);
     
     [Button()]
-    public void TestNextHair() => _customisationData.ChangePartDataToNext(CustomisationPartType.Hair);
+    public void TestNextHair() => _customisationData.ChangePartDataToNextFromAll(CustomisationPartType.Hair);
     
     [Button()]
-    public void TestNextPants() => _customisationData.ChangePartDataToNext(CustomisationPartType.Pants);
+    public void TestNextPants() => _customisationData.ChangePartDataToNextFromAll(CustomisationPartType.Pants);
     
     [Button()]
-    public void TestNextShoes() => _customisationData.ChangePartDataToNext(CustomisationPartType.Shoes);
+    public void TestNextShoes() => _customisationData.ChangePartDataToNextFromAll(CustomisationPartType.Shoes);
     
     [Button()]
-    public void TestNextShirt() => _customisationData.ChangePartDataToNext(CustomisationPartType.Shirt);
+    public void TestNextShirt() => _customisationData.ChangePartDataToNextFromAll(CustomisationPartType.Shirt);
   }
 }

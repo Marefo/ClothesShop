@@ -9,6 +9,7 @@ namespace _Codebase.UI
   public class CustomisationPartChanger : MonoBehaviour
   {
     [SerializeField] private CustomisationPartType _partType;
+    [SerializeField] private bool _fromBought;
     [Space(10)] 
     [SerializeField] private TextMeshProUGUI _currentPartNameField;
     [SerializeField] private Button _prevPartButton;
@@ -39,9 +40,21 @@ namespace _Codebase.UI
       SetCurrentPartName(newPartData.Name);
     }
 
-    private void OnPreviousPartButtonClick() => _customisationData.ChangePartDataToPrevious(_partType);
+    private void OnPreviousPartButtonClick()
+    {
+      if(_fromBought)
+        _customisationData.ChangePartDataToPreviousFromBought(_partType);
+      else
+        _customisationData.ChangePartDataToPreviousFromAll(_partType);
+    }
 
-    private void OnNextPartButtonClick() => _customisationData.ChangePartDataToNext(_partType);
+    private void OnNextPartButtonClick()
+    {
+      if(_fromBought)
+        _customisationData.ChangePartDataToNextFromBought(_partType);
+      else
+        _customisationData.ChangePartDataToNextFromAll(_partType);
+    }
 
     private void InitializeCurrentPartName()
     {
