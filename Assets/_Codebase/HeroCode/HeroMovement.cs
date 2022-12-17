@@ -1,4 +1,5 @@
 using _Codebase.HeroCode.Data;
+using _Codebase.Logic;
 using _Codebase.Services;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace _Codebase.HeroCode
   {
     [SerializeField] private InputService _inputService;
     [Space(10)]
-    [SerializeField] private HeroAnimator _heroAnimator;
+    [SerializeField] private UnitAnimator _animator;
     [SerializeField] private Rigidbody2D _rigidbody;
     [Space(10)] 
     [SerializeField] private HeroSettings _settings;
@@ -35,11 +36,11 @@ namespace _Codebase.HeroCode
       if (isMoving)
         _lastMovement = movement;
 
-      _heroAnimator.UpdateLastMovementX(_lastMovement.x);
-      _heroAnimator.UpdateLastMovementY(_lastMovement.y);
-      _heroAnimator.UpdateMovementX(movement.x);
-      _heroAnimator.UpdateMovementY(movement.y);
-      _heroAnimator.ChangeMovementState(isMoving);
+      _animator.UpdateLastMovementX(_lastMovement.x);
+      _animator.UpdateLastMovementY(_lastMovement.y);
+      _animator.UpdateMovementX(movement.x);
+      _animator.UpdateMovementY(movement.y);
+      _animator.ChangeMovementState(isMoving);
     }
   }
 }

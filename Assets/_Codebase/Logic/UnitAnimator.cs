@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace _Codebase.HeroCode
+namespace _Codebase.Logic
 {
-  public class HeroAnimator : MonoBehaviour
+  public class UnitAnimator : MonoBehaviour
   {
     [SerializeField] private Animator _animator;
     
