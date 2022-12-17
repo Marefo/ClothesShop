@@ -20,11 +20,20 @@ namespace _Codebase.HeroCode
     private void Awake()
     {
       InitializeAnimatorOverrideController();
-      InitializeCurrentCustomisationParts();
+      UpdateCurrentCustomisationParts();
     }
 
-    private void OnEnable() => _customisationData.PartChanged += OnPartChange;
-    private void OnDisable() => _customisationData.PartChanged -= OnPartChange;
+    private void OnEnable()
+    {
+      _customisationData.PartChanged += OnPartChange;
+      _customisationData.CurrentPartsChanged += UpdateCurrentCustomisationParts;
+    }
+
+    private void OnDisable()
+    {
+      _customisationData.PartChanged -= OnPartChange;
+      _customisationData.CurrentPartsChanged -= UpdateCurrentCustomisationParts;
+    }
 
     private void OnPartChange(CustomisationPartType partType, CustomisationPartData currentPartData, CustomisationPartData nextPartData)
     {
@@ -51,7 +60,7 @@ namespace _Codebase.HeroCode
       _animatorOverrideController.ApplyOverrides(_currentClips);
     }
 
-    private void InitializeCurrentCustomisationParts()
+    private void UpdateCurrentCustomisationParts()
     {
       var partTypes = Helpers.EnumToList<CustomisationPartType>();
       foreach (CustomisationPartType partType in partTypes)

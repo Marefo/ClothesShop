@@ -12,6 +12,7 @@ namespace _Codebase.HeroCode.Data
   public class HeroCustomisationData : ScriptableObject
   {
     public event Action<CustomisationPartType, CustomisationPartData, CustomisationPartData> PartChanged;
+    public event Action CurrentPartsChanged;
     
     public List<CustomisationMultiplePartsType> AllPartsTypesData;
     [Space(10)]
@@ -25,6 +26,8 @@ namespace _Codebase.HeroCode.Data
     [Space(10)] 
     public CustomisationPartData EmptyPart;
 
+    private List<CustomisationSinglePartType> BeforeFittingPartsData;
+    
     public CustomisationSinglePartType GetCurrentPartData(CustomisationPartType partType) =>
       CurrentPartsData.First(partData => partData.Type == partType);
     
@@ -72,6 +75,14 @@ namespace _Codebase.HeroCode.Data
       boughtPartsWithSameType.Add(part);
     }
 
+    public void OnFittingStart() => BeforeFittingPartsData = CopySinglePartsType(CurrentPartsData);
+    
+    public void OnFittingFinish()
+    {
+      CurrentPartsData = CopySinglePartsType(BeforeFittingPartsData);
+      CurrentPartsChanged?.Invoke();
+    }
+
     public void ChangePartDataToNext(CustomisationPartType partType) => ChangeCurrentPartTo(true, partType);
     public void ChangePartDataToPrevious(CustomisationPartType partType) => ChangeCurrentPartTo(false, partType);
 
@@ -109,6 +120,19 @@ namespace _Codebase.HeroCode.Data
       List<CustomisationMultiplePartsType> from)
     {
       return from.First(partTypeData => partTypeData.CustomisationPartType == type).CustomisationPartsData;
+    }
+    
+    private List<CustomisationSinglePartType> CopySinglePartsType(List<CustomisationSinglePartType> singlePartsType)
+    {
+      var copy = new List<CustomisationSinglePartType>();
+      
+      foreach (var partTypeData in singlePartsType)
+      {
+        var partData = new CustomisationSinglePartType(partTypeData.Type, partTypeData.CustomisationPartData);
+        copy.Add(partData);
+      }
+
+      return copy;
     }
   }
 }

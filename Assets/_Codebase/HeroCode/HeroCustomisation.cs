@@ -16,6 +16,7 @@ namespace _Codebase.HeroCode
 
     public void StartFittingClothes()
     {
+      _customisationData.OnFittingStart();
       _camerasStateController.ZoomIn();
       _characterCustomisationPanel.Show();
     }
@@ -24,6 +25,7 @@ namespace _Codebase.HeroCode
     {
       _camerasStateController.ZoomOut();
       _characterCustomisationPanel.Hide();
+      _customisationData.OnFittingFinish();
     }
     
     [Button()]
