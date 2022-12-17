@@ -7,6 +7,8 @@ namespace _Codebase.Services
   public class InputService : MonoBehaviour
   {
     public event Action InteractBtnPressed;
+
+    public bool Enabled { get; private set; }
     
     private InputActions _inputActions;
 
@@ -24,8 +26,15 @@ namespace _Codebase.Services
       _inputActions.Player.Interact.performed -= OnInteractBtnPress;
     }
 
-    public Vector2 GetMovementInput() => _inputActions.Player.Movement.ReadValue<Vector2>();
+    public void Enable() => Enabled = true;
+    public void Disable() => Enabled = false;
 
-    private void OnInteractBtnPress(InputAction.CallbackContext obj) => InteractBtnPressed?.Invoke();
+    public Vector2 GetMovementInput() => Enabled ? _inputActions.Player.Movement.ReadValue<Vector2>() : Vector2.zero;
+
+    private void OnInteractBtnPress(InputAction.CallbackContext obj)
+    {
+      if(Enabled == false) return;
+      InteractBtnPressed?.Invoke();
+    }
   }
 }

@@ -3,6 +3,7 @@ using _Codebase.Customisation;
 using _Codebase.HeroCode.Data;
 using _CodeBase.Logging;
 using _Codebase.Money;
+using _Codebase.Services;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -29,14 +30,17 @@ namespace _Codebase.UI.Shop
     private CustomisationPartData _data;
     private int _cost;
     private Tween _resetButtonColorTween;
+    private AudioService _audioService;
 
     private void OnDestroy() => _buyButton.onClick.RemoveListener(TryBuy);
 
-    public void Initialize(CustomisationPartType partType, CustomisationPartData customisationPartData)
+    public void Initialize(CustomisationPartType partType, CustomisationPartData customisationPartData, 
+      AudioService audioService)
     {
       _type = partType;
       _data = customisationPartData;
       _cost = _data.Cost;
+      _audioService = audioService;
       SetNameText(_itemName);
       SetIcon(_data.Icon);
       SetCostText(_cost);
@@ -57,12 +61,14 @@ namespace _Codebase.UI.Shop
       _resetButtonColorTween?.Kill();
       _buyButtonImage.color = _failedBtnColor;
       _resetButtonColorTween = DOVirtual.DelayedCall(0.2f, () => _buyButtonImage.color = Color.white);
+      _audioService.Play(_audioService.SfxData.FailedPurchase);
     }
 
     private void Buy()
     {
       _moneyData.Remove(_cost);
       _customisationData.Buy(_type, _data);
+      _audioService.Play(_audioService.SfxData.SuccessfulPurchase);
       Destroy();
     }
 

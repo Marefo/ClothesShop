@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05adeb579baa45d78a1f5a2753411c62, type: 3}
+  m_Name: NPCCustomisationData
+  m_EditorClassIdentifier: 
+  AllPartsTypesData:
+  - CustomisationPartType: 0
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: 8e1a598b4fac68e4585bcc00c185ac91, type: 2}
+    - {fileID: 11400000, guid: 3d2a0bc71f4cc4146ad82ceae387c5fc, type: 2}
+  - CustomisationPartType: 1
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: a5e4101996ef68c4fb92fd819a93ffdc, type: 2}
+    - {fileID: 11400000, guid: c48b8254fb832f747b2df4eff9412e8d, type: 2}
+  - CustomisationPartType: 2
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+    - {fileID: 11400000, guid: fdbc9bf095094764280f4a23927a32ef, type: 2}
+    - {fileID: 11400000, guid: 16e16b0709f6a734186ea1894b77ece1, type: 2}
+  - CustomisationPartType: 3
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+    - {fileID: 11400000, guid: e6469f58c40ab3e44a31f6874be57b60, type: 2}
+    - {fileID: 11400000, guid: b8bb229737db876428ee6c5c20d6cade, type: 2}
+    - {fileID: 11400000, guid: bfb8eb1b60acbf343aac0ade9484ba53, type: 2}
+  - CustomisationPartType: 4
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+    - {fileID: 11400000, guid: 82a14f0b1fdcdb445b7b54511813097c, type: 2}
+    - {fileID: 11400000, guid: 9c68272234a61554a96348455f345589, type: 2}
+    - {fileID: 11400000, guid: c8bdce935cd82fa4e8cffdad708d6fe5, type: 2}
+  UnBoughtPartsTypesData:
+  - CustomisationPartType: 2
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+    - {fileID: 11400000, guid: 16e16b0709f6a734186ea1894b77ece1, type: 2}
+  - CustomisationPartType: 3
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+    - {fileID: 11400000, guid: e6469f58c40ab3e44a31f6874be57b60, type: 2}
+    - {fileID: 11400000, guid: b8bb229737db876428ee6c5c20d6cade, type: 2}
+    - {fileID: 11400000, guid: bfb8eb1b60acbf343aac0ade9484ba53, type: 2}
+  - CustomisationPartType: 4
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+    - {fileID: 11400000, guid: 82a14f0b1fdcdb445b7b54511813097c, type: 2}
+    - {fileID: 11400000, guid: 9c68272234a61554a96348455f345589, type: 2}
+    - {fileID: 11400000, guid: c8bdce935cd82fa4e8cffdad708d6fe5, type: 2}
+  BoughtPartsTypesData:
+  - CustomisationPartType: 2
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+    - {fileID: 11400000, guid: fdbc9bf095094764280f4a23927a32ef, type: 2}
+  - CustomisationPartType: 3
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+  - CustomisationPartType: 4
+    CustomisationPartsData:
+    - {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+  CurrentPartsData:
+  - Type: 0
+    CustomisationPartData: {fileID: 11400000, guid: 8e1a598b4fac68e4585bcc00c185ac91, type: 2}
+  - Type: 1
+    CustomisationPartData: {fileID: 11400000, guid: a5e4101996ef68c4fb92fd819a93ffdc, type: 2}
+  - Type: 2
+    CustomisationPartData: {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+  - Type: 3
+    CustomisationPartData: {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+  - Type: 4
+    CustomisationPartData: {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}
+  ProductTypes: 020000000300000004000000
+  EmptyPart: {fileID: 11400000, guid: 233c52230196d3c4491d9c1186a3f0f2, type: 2}

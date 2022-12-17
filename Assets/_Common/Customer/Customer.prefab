@@ -364,7 +364,7 @@ MonoBehaviour:
   - Type: 4
     GameObject: {fileID: 5808842387655430485}
   _animator: {fileID: 5808842389548275492}
-  _customisationData: {fileID: 11400000, guid: 1abb4877c41258a448eda74ecfa63387, type: 2}
+  _customisationData: {fileID: 11400000, guid: 6bc632a46de46674b9222550ab60754c, type: 2}
 --- !u!114 &5808842388489495308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visual: {fileID: 5808842387712249224}
+  _withAudio: 0
+  _audioService: {fileID: 0}
 --- !u!1 &5808842389184225102
 GameObject:
   m_ObjectHideFlags: 0

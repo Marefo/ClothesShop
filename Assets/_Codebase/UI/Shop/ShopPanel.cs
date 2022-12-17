@@ -1,6 +1,5 @@
-﻿using System;
-using _Codebase.Customisation;
-using _Codebase.HeroCode.Data;
+﻿using _Codebase.Customisation;
+using _Codebase.Services;
 using UnityEngine;
 
 namespace _Codebase.UI.Shop
@@ -9,6 +8,7 @@ namespace _Codebase.UI.Shop
   {
     [SerializeField] private Transform _itemsContainer;
     [SerializeField] private ShopItem _shopItemPrefab;
+    [SerializeField] private AudioService _audioService;
     [Space(10)]
     [SerializeField] private CustomisationData _customisationData;
 
@@ -25,7 +25,7 @@ namespace _Codebase.UI.Shop
         {
           if(partData.Empty) continue;
           ShopItem shopItem = Instantiate(_shopItemPrefab, _itemsContainer);
-          shopItem.Initialize(currentPartsType, partData);
+          shopItem.Initialize(currentPartsType, partData, _audioService);
         }
       }
     }

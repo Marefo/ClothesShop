@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _Codebase.Extensions;
 using _Codebase.Infrastructure;
+using _CodeBase.Logging;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -123,7 +124,7 @@ namespace _Codebase.Customisation
     {
       List<CustomisationPartData> parts = GetPartsByType(partType, fromBought ? BoughtPartsTypesData : AllPartsTypesData);
       int previousPartIndex = currentPartIndex - 1;
-      return previousPartIndex > 0 ? parts[previousPartIndex] : parts.Last();
+      return previousPartIndex >= 0 ? parts[previousPartIndex] : parts.Last();
     }
 
     private CustomisationPartData GetNextPartData(CustomisationPartType partType, int currentPartIndex, bool fromBought)

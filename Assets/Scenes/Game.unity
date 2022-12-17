@@ -366,6 +366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visual: {fileID: 1876332482}
+  _withAudio: 1
+  _audioService: {fileID: 292797748}
 --- !u!114 &53841496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemsContainer: {fileID: 291922650}
   _shopItemPrefab: {fileID: 1417642013854831802, guid: d3d750d14f29ffe40a0e4cf966c22088, type: 3}
+  _audioService: {fileID: 292797748}
   _customisationData: {fileID: 11400000, guid: 1abb4877c41258a448eda74ecfa63387, type: 2}
 --- !u!1 &59699465
 GameObject:
@@ -549,6 +552,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visual: {fileID: 2134432122}
+  _withAudio: 1
+  _audioService: {fileID: 292797748}
 --- !u!224 &87026155 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3541532842282993112, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
@@ -704,8 +709,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1350838911}
   - {fileID: 1181103557}
+  - {fileID: 1350838911}
   m_Father: {fileID: 105368009}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -733,8 +738,8 @@ MonoBehaviour:
   m_LayerIndex: 0
   m_ShowDebugText: 0
   m_ChildCameras:
-  - {fileID: 1350838912}
   - {fileID: 1181103558}
+  - {fileID: 1350838912}
   m_Instructions:
   - m_FullHash: -1019929913
     m_VirtualCamera: {fileID: 1350838912}
@@ -969,6 +974,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visual: {fileID: 2081935413}
+  _withAudio: 1
+  _audioService: {fileID: 292797748}
 --- !u!1 &291922649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,7 +1011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00035557308, y: 1120301}
+  m_AnchoredPosition: {x: -0.00035557308, y: 1215316}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &291922651
@@ -1047,6 +1054,149 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 1
+--- !u!1 &292797746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 292797747}
+  - component: {fileID: 292797748}
+  - component: {fileID: 292797749}
+  m_Layer: 0
+  m_Name: AudioService
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &292797747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292797746}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1466347909}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &292797748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292797746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5369d33caf47099ab29b52a8d7bf8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <SfxData>k__BackingField: {fileID: 11400000, guid: b71466c10efeba349947e2dc115a96e5, type: 2}
+  _audioSource: {fileID: 292797749}
+--- !u!82 &292797749
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292797746}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &299016654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,6 +1251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500671d23a484b0985fde730f0bdd961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enableInput: 0
+  _inputService: {fileID: 0}
   _button: {fileID: 299016658}
   _panel: {fileID: 216971589}
   _camerasStateController: {fileID: 167148978}
@@ -1300,6 +1452,10 @@ PrefabInstance:
       propertyPath: _fromBought
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3541532842282993113, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
+      propertyPath: _audioService
+      value: 
+      objectReference: {fileID: 292797748}
     - target: {fileID: 3541532842282993115, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
       propertyPath: m_Name
       value: PantsCustomisationPartChanger (1)
@@ -1728,6 +1884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500671d23a484b0985fde730f0bdd961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enableInput: 0
+  _inputService: {fileID: 0}
   _button: {fileID: 376386824}
   _panel: {fileID: 1363005289}
   _camerasStateController: {fileID: 167148978}
@@ -2288,7 +2446,7 @@ MonoBehaviour:
   - Type: 4
     GameObject: {fileID: 438603993}
   _animator: {fileID: 1483088082}
-  _customisationData: {fileID: 11400000, guid: 1abb4877c41258a448eda74ecfa63387, type: 2}
+  _customisationData: {fileID: 11400000, guid: 6bc632a46de46674b9222550ab60754c, type: 2}
 --- !u!1 &461361233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2754,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -22411,7 +22569,7 @@ Transform:
   m_Children:
   - {fileID: 1527259024}
   m_Father: {fileID: 167148975}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1181103558
 MonoBehaviour:
@@ -22675,6 +22833,10 @@ PrefabInstance:
       propertyPath: _fromBought
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3541532842282993113, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
+      propertyPath: _audioService
+      value: 
+      objectReference: {fileID: 292797748}
     - target: {fileID: 3541532842282993115, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
       propertyPath: m_Name
       value: ShirtCustomisationPartChanger
@@ -22833,6 +22995,10 @@ PrefabInstance:
       propertyPath: _fromBought
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3541532842282993113, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
+      propertyPath: _audioService
+      value: 
+      objectReference: {fileID: 292797748}
     - target: {fileID: 3541532842282993115, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
       propertyPath: m_Name
       value: ShoesCustomisationPartChanger (2)
@@ -22927,7 +23093,7 @@ Transform:
   m_Children:
   - {fileID: 1094739157}
   m_Father: {fileID: 167148975}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1350838912
 MonoBehaviour:
@@ -23018,6 +23184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visual: {fileID: 1049959077}
+  _withAudio: 1
+  _audioService: {fileID: 292797748}
 --- !u!1 &1386257005
 GameObject:
   m_ObjectHideFlags: 0
@@ -23243,6 +23411,10 @@ PrefabInstance:
       propertyPath: _partType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3541532842282993113, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
+      propertyPath: _audioService
+      value: 
+      objectReference: {fileID: 292797748}
     - target: {fileID: 3541532842282993115, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
       propertyPath: m_Name
       value: PantsCustomisationPartChanger (1)
@@ -23335,6 +23507,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2133874231}
+  - {fileID: 292797747}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25570,6 +25743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visual: {fileID: 365996782}
+  _withAudio: 0
+  _audioService: {fileID: 0}
 --- !u!1 &1789885792
 GameObject:
   m_ObjectHideFlags: 0
@@ -25977,6 +26152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500671d23a484b0985fde730f0bdd961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enableInput: 1
+  _inputService: {fileID: 2133874232}
   _button: {fileID: 1869043143}
   _panel: {fileID: 82678507}
   _camerasStateController: {fileID: 167148978}
@@ -26086,6 +26263,10 @@ PrefabInstance:
       propertyPath: _partType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5000104346652336242, guid: a9c68550b0fe183439b6f129787218a2, type: 3}
+      propertyPath: _audioService
+      value: 
+      objectReference: {fileID: 292797748}
     - target: {fileID: 5000104346652336243, guid: a9c68550b0fe183439b6f129787218a2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -26415,6 +26596,10 @@ PrefabInstance:
       propertyPath: _partType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3541532842282993113, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
+      propertyPath: _audioService
+      value: 
+      objectReference: {fileID: 292797748}
     - target: {fileID: 3541532842282993115, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
       propertyPath: m_Name
       value: ShoesCustomisationPartChanger (2)
@@ -26722,7 +26907,7 @@ RectTransform:
   m_GameObject: {fileID: 2134432121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 364782354}
@@ -26891,6 +27076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkinCustomisationPartChanger
       objectReference: {fileID: 0}
+    - target: {fileID: 5000104346652336242, guid: a9c68550b0fe183439b6f129787218a2, type: 3}
+      propertyPath: _audioService
+      value: 
+      objectReference: {fileID: 292797748}
     - target: {fileID: 5000104346652336243, guid: a9c68550b0fe183439b6f129787218a2, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -27068,6 +27257,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3541532842282993113, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
+      propertyPath: _audioService
+      value: 
+      objectReference: {fileID: 292797748}
     - target: {fileID: 3541532842282993115, guid: 0f56627232089ec4aa0f8e629c80fccd, type: 3}
       propertyPath: m_Name
       value: ShirtCustomisationPartChanger
