@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Codebase.Extensions;
 using _Codebase.Infrastructure;
 using NaughtyAttributes;
 using UnityEngine;
@@ -19,6 +20,10 @@ namespace _Codebase.HeroCode.Data
     public List<CustomisationMultiplePartsType> BoughtPartsTypesData;
     [Space(10)]
     public List<CustomisationSinglePartType> CurrentPartsData;
+    [Space(10)] 
+    public List<CustomisationPartType> ProductTypes;
+    [Space(10)] 
+    public CustomisationPartData EmptyPart;
 
     public CustomisationSinglePartType GetCurrentPartData(CustomisationPartType partType) =>
       CurrentPartsData.First(partData => partData.Type == partType);
@@ -26,21 +31,45 @@ namespace _Codebase.HeroCode.Data
     [Button]
     public void SetToDefault()
     {
-      UnBoughtPartsTypesData = new List<CustomisationMultiplePartsType>(AllPartsTypesData);
+      var customisationPartTypes = Helpers.EnumToList<CustomisationPartType>();
+
+      UnBoughtPartsTypesData.Clear();
+      foreach (var multiplePartsByType in AllPartsTypesData)
+      {
+        if(IsProduct(multiplePartsByType.CustomisationPartType) == false) continue;
+
+        List<CustomisationPartData> customisationPartsData = multiplePartsByType.CustomisationPartsData.ToList();
+        var newPartsByType = new CustomisationMultiplePartsType(multiplePartsByType.CustomisationPartType,
+          customisationPartsData);
+        
+        UnBoughtPartsTypesData.Add(newPartsByType);
+      }
 
       CurrentPartsData.Clear();
-      var customisationPartTypes = Helpers.EnumToList<CustomisationPartType>();
       foreach (var type in customisationPartTypes)
       {
         var newPartData = new CustomisationSinglePartType(type, GetPartsByType(type, AllPartsTypesData)
           .First());
         CurrentPartsData.Add(newPartData);
       }
-    }
-    
-    public void Buy(CustomisationPartData part)
-    {
       
+      BoughtPartsTypesData.Clear();
+      foreach (var partsByType in UnBoughtPartsTypesData)
+      {
+        var parts = new List<CustomisationPartData>{ EmptyPart };
+        var newPartData = new CustomisationMultiplePartsType(partsByType.CustomisationPartType, parts);
+        BoughtPartsTypesData.Add(newPartData);
+      }
+    }
+
+    public bool IsProduct(CustomisationPartType type) => ProductTypes.Contains(type);
+    
+    public void Buy(CustomisationPartType type, CustomisationPartData part)
+    {
+      var unBoughtPartsWithSameType = GetPartsByType(type, UnBoughtPartsTypesData);
+      unBoughtPartsWithSameType.Remove(part);
+      var boughtPartsWithSameType = GetPartsByType(type, BoughtPartsTypesData);
+      boughtPartsWithSameType.Add(part);
     }
 
     public void ChangePartDataToNext(CustomisationPartType partType) => ChangeCurrentPartTo(true, partType);

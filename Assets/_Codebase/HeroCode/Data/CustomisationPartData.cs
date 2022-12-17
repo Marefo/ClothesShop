@@ -9,7 +9,10 @@ namespace _Codebase.HeroCode.Data
   public class CustomisationPartData : ScriptableObject
   {
     public bool Empty;
+    [Space(10)]
     public string Name;
+    [HideIf(nameof(Empty))] public Sprite Icon;
+    [HideIf(nameof(Empty))] public int Cost;
     [HideIf(nameof(Empty))] public List<CustomisationAnimationClipData> AnimationClips;
 
     public AnimationClip GetClip(HeroStateType heroStateType, MoveDirectionType moveDirectionType)

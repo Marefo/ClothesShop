@@ -8,5 +8,11 @@ namespace _Codebase.HeroCode.Data
   {
     public CustomisationPartType CustomisationPartType;
     public List<CustomisationPartData> CustomisationPartsData;
+    
+    public CustomisationMultiplePartsType(CustomisationPartType customisationPartType, List<CustomisationPartData> customisationPartsData)
+    {
+      CustomisationPartType = customisationPartType;
+      CustomisationPartsData = customisationPartsData;
+    }
   }
 }

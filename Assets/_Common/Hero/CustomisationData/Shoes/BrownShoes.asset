@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: BrownShoes
   m_EditorClassIdentifier: 
   Empty: 0
+  Product: 1
   Name: Brown
+  Icon: {fileID: -160643396, guid: b6714005f6452d64482a8a3e37cebd04, type: 3}
+  Cost: 15
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

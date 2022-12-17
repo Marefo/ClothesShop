@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: BlackShoes
   m_EditorClassIdentifier: 
   Empty: 0
+  Product: 1
   Name: Black
+  Icon: {fileID: -1653671168, guid: b60b0b496e904334f8a07121ebb53726, type: 3}
+  Cost: 15
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

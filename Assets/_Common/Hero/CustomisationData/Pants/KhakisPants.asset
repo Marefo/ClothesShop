@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: KhakisPants
   m_EditorClassIdentifier: 
   Empty: 0
+  Product: 1
   Name: Red
+  Icon: {fileID: -1357449481, guid: 82069b399472ca94088afff85cc78eef, type: 3}
+  Cost: 15
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

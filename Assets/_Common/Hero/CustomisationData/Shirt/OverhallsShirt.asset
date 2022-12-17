@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: OverhallsShirt
   m_EditorClassIdentifier: 
   Empty: 0
+  Product: 1
   Name: Overalls
+  Icon: {fileID: 2080340273, guid: 81e801e5461715b46b89e9dbcf96443d, type: 3}
+  Cost: 20
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

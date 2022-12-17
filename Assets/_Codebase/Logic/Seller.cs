@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _CodeBase.Logging;
+using UnityEngine;
 
 namespace _Codebase.Logic
 {
@@ -9,6 +10,13 @@ namespace _Codebase.Logic
     
     public void OnInteractionZoneEnter() => _hint.Show();
     public void OnInteractionZoneCancel() => _hint.Hide();
-    public void Interact() => _shopPanel.Show();
+    
+    public void Interact()
+    {
+      if(_shopPanel.Visible == false)
+        _shopPanel.Show();
+      else
+        _shopPanel.Hide();
+    }
   }
 }
