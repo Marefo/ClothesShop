@@ -15,7 +15,7 @@ namespace _Codebase.HeroCode.Data
     public AnimationClip GetClip(HeroStateType heroStateType, MoveDirectionType moveDirectionType)
     {
       return AnimationClips
-        .First(clip => clip.StateType == heroStateType && clip.MoveDirectionType == moveDirectionType)?.Clip;
+        .First(clip => clip.StateType == heroStateType && clip.MoveDirectionType == moveDirectionType).Clip;
     }
   }
 }

@@ -56,9 +56,9 @@ namespace _Codebase.HeroCode
       var partTypes = Helpers.EnumToList<CustomisationPartType>();
       foreach (CustomisationPartType partType in partTypes)
       {
-        var targetPartData = _customisationData.GetCurrentPartData(partType).CustomisationPartData;
+        var targetPartData = _customisationData.GetCurrentPartData(partType);
 
-        if (targetPartData.Empty)
+        if (targetPartData.CustomisationPartData.Empty)
         {
           ChangePartState(partType, false);
           continue;
@@ -71,7 +71,7 @@ namespace _Codebase.HeroCode
           foreach (MoveDirectionType directionType in directionTypes)
           {
             string currentClipName = GetAnimationClipKey(partType, stateType, directionType);
-            AnimationClip targetClip = targetPartData.GetClip(stateType, directionType);
+            AnimationClip targetClip = targetPartData.CustomisationPartData.GetClip(stateType, directionType);
               
             ReplaceClip(currentClipName, targetClip);
           }  

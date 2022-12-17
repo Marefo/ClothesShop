@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b29bfb5c4eeb4ae18ecd6e86c22b1fff, type: 3}
-  m_Name: Hero
+  m_Name: HeroSettings
   m_EditorClassIdentifier: 
   MoveSpeed: 3
+  WalkAnimationThreshold: 0.05

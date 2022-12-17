@@ -1,5 +1,6 @@
 ﻿using _Codebase.Camera;
 using _Codebase.HeroCode.Data;
+using _Codebase.Logic;
 using _Codebase.UI;
 using NaughtyAttributes;
 using UnityEngine;
@@ -8,7 +9,7 @@ namespace _Codebase.HeroCode
 {
   public class HeroCustomisation : MonoBehaviour
   {
-    [SerializeField] private Panel _characterCustomisationPanel;
+    [SerializeField] private Showable _characterCustomisationPanel;
     [SerializeField] private CamerasStateController _camerasStateController;
     [Space(10)]
     [SerializeField] private HeroCustomisationData _customisationData;

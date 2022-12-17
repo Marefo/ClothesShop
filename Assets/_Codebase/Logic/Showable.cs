@@ -1,9 +1,9 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-namespace _Codebase.UI
+namespace _Codebase.Logic
 {
-  public class Panel : MonoBehaviour
+  public class Showable : MonoBehaviour
   {
     [SerializeField] private Transform _visual;
 
