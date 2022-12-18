@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: YellowShoes
   m_EditorClassIdentifier: 
   Empty: 0
-  Product: 1
   Name: Yellow
   Icon: {fileID: 1523283440, guid: 39b31acec6afbf44bb8601dae2da5d89, type: 3}
-  Cost: 22
+  BuyCost: 18
+  SellCost: 15
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

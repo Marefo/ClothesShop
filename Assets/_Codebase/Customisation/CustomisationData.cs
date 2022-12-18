@@ -14,6 +14,8 @@ namespace _Codebase.Customisation
   {
     public event Action<CustomisationPartType, CustomisationPartData, CustomisationPartData> PartChanged;
     public event Action CurrentPartsChanged;
+    public event Action<CustomisationPartType, CustomisationPartData> Bought;
+    public event Action<CustomisationPartType, CustomisationPartData> Sold;
     
     public List<CustomisationMultiplePartsType> AllPartsTypesData;
     [Space(10)]
@@ -80,6 +82,18 @@ namespace _Codebase.Customisation
       unBoughtPartsWithSameType.Remove(part);
       var boughtPartsWithSameType = GetPartsByType(type, BoughtPartsTypesData);
       boughtPartsWithSameType.Add(part);
+      
+      Bought?.Invoke(type, part);
+    }
+
+    public void Sell(CustomisationPartType type, CustomisationPartData part)
+    {
+      var boughtPartsWithSameType = GetPartsByType(type, BoughtPartsTypesData);
+      boughtPartsWithSameType.Remove(part);
+      var unBoughtPartsWithSameType = GetPartsByType(type, UnBoughtPartsTypesData);
+      unBoughtPartsWithSameType.Add(part);
+      
+      Sold?.Invoke(type, part);
     }
 
     public void OnFittingStart() => BeforeFittingPartsData = CopySinglePartsType(CurrentPartsData);

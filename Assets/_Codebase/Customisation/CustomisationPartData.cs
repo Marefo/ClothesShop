@@ -14,7 +14,8 @@ namespace _Codebase.Customisation
     [Space(10)]
     public string Name;
     [HideIf(nameof(Empty))] public Sprite Icon;
-    [HideIf(nameof(Empty))] public int Cost;
+    [HideIf(nameof(Empty))] public int BuyCost;
+    [HideIf(nameof(Empty))] public int SellCost;
     [HideIf(nameof(Empty))] public List<CustomisationAnimationClipData> AnimationClips;
 
     public AnimationClip GetClip(UnitStateType unitStateType, MoveDirectionType moveDirectionType)

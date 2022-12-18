@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: WhiteShirt
   m_EditorClassIdentifier: 
   Empty: 0
-  Product: 1
   Name: White
   Icon: {fileID: -349467334, guid: a1e92aeaf24fb864980e40459b5c03d8, type: 3}
-  Cost: 25
+  BuyCost: 32
+  SellCost: 22
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

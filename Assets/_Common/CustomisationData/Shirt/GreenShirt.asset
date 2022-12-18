@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: GreenShirt
   m_EditorClassIdentifier: 
   Empty: 0
-  Product: 1
   Name: Green
   Icon: {fileID: 1543802380, guid: bdd1e1114ff1d8042a9c3960f0d86173, type: 3}
-  Cost: 25
+  BuyCost: 30
+  SellCost: 20
   AnimationClips:
   - StateType: 0
     MoveDirectionType: 0

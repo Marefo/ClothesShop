@@ -85,7 +85,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1417642013854831803}
-  - component: {fileID: 1417642013854831802}
   m_Layer: 0
   m_Name: ShopItem
   m_TagString: Untagged
@@ -118,26 +117,6 @@ RectTransform:
   m_AnchoredPosition: {x: 271.5, y: -175}
   m_SizeDelta: {x: 400, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1417642013854831802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417642013854831796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 324e899c2c8c468f9a814088efda516b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _failedBtnColor: {r: 1, g: 0.56078434, b: 0.56078434, a: 1}
-  _nameField: {fileID: 1417642014356755194}
-  _costField: {fileID: 1417642015757338309}
-  _icon: {fileID: 1417642015060914832}
-  _buyButton: {fileID: 1417642015618281904}
-  _buyButtonImage: {fileID: 1417642015618281911}
-  _customisationData: {fileID: 11400000, guid: 1abb4877c41258a448eda74ecfa63387, type: 2}
-  _moneyData: {fileID: 11400000, guid: 4e81bfee53f92664cbff9b2791e47354, type: 2}
 --- !u!1 &1417642014356755188
 GameObject:
   m_ObjectHideFlags: 0
